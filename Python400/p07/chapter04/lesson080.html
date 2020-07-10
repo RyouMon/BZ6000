@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Content</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+
+        $(document).ready(
+            function () {
+                $("#btn").click(
+                    function () {
+                        var div = $("#d");
+                        var ht = div.html();
+                        console.log(ht);
+                    }
+                )
+            }
+        )
+    </script>
+</head>
+<body>
+<button id="btn">元素内容</button>
+<div id="d">
+    <span>花澤香菜さん</span>
+</div>
+</body>
+</html>

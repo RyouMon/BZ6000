@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<title>jQuery操作表格</title>
+		<meta charset="UTF-8"/>
+		<!--声明css代码域-->
+		<style type="text/css">
+			tr{
+				height: 40px;
+			}
+		</style>
+		<script src="jquery-3.5.1.min.js"></script>
+		<script src="lesson091-093.js"></script>
+	 
+		
+	</head>
+	<body>
+		<h3>jQuery操作表格</h3>
+		<hr />
+		<input type="button" id="fx" value="反选" />
+		<input type="button" id="addRow" value="新增一行" />
+		<input type="button" id="delRow" value="删除行" />
+		<input type="button" id="copyRow" value="复制行" />
+		<table border="1px" cellpadding="10px" cellspacing="0" id="ta">
+			<tr>
+				<td width="50px"><input type="checkbox" name="chks" id="chks" value="1" /></td>
+				<td width="200px">书名</td>
+				<td width="200px">作者</td>
+				<td width="200px">数量</td>
+				<td width="200px">操作</td>
+			</tr>
+			<tr id="">
+				<td><input type="checkbox" name="chk" id="" value="2"/></td>
+				<td>《Java编程之道》</td>
+				<td>wollo</td>
+				<td>10</td>
+				<td>
+					<input type="button" name="changeQ" id="" value="修改数量"  />
+					<input type="button" name="delete" id="" value="删除" />
+				</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="chk" id="" value="3" /></td>
+				<td>《Python和我的故事》</td>
+				<td>赵老师</td>
+				<td>10</td>
+				<td>
+					<input type="button" name="changeQ" id="" value="修改数量" />
+					<input type="button" name="delete" id="" value="删除" />
+				</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="chk" id="" value="4" /></td>
+				<td>《web开发详解》</td>
+				<td>张老师</td>
+				<td>30</td>
+				<td>
+					<input type="button" name="changeQ" id="" value="修改数量" />
+					<input type="button" name="delete" id="" value="删除" />
+				</td>
+			</tr>			
+		</table>
+	</body>
+</html>

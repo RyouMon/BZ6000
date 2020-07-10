@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Insertion Removal</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        //  在div下插入新的div
+        $(document).ready(
+            function () {
+                $("#adiv").click(
+                    function () {
+                        $("<div><p>节点P</p></div>").insertAfter($("#demo"));
+                    }
+                )
+            }
+        )
+
+        // 在div内插入新的p元素
+        $(function () {
+            $("#ap").click(
+                function () {
+                    $("#demo").append("<p>节点P</p>");
+                }
+            )
+        })
+
+        // 移除div内的p元素
+        $(function () {
+            $("#rp").click(
+                function () {
+                    $("#demo").children().last().remove();
+                }
+            )
+        })
+    </script>
+    <style>
+        div {
+            border: 2px red solid;
+        }
+        p {
+            border: 2px green solid;
+        }
+    </style>
+</head>
+<body>
+<button id="adiv">添加DIV节点</button>
+<button id="ap">添加P节点</button>
+<button id="rp">移除P节点</button>
+<div id="demo">
+    <p>节点P</p>
+    <p>节点P</p>
+    <p>节点P</p>
+    <p>节点P</p>
+    <p>节点P</p>
+</div>
+</body>
+</html>

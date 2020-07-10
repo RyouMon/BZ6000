@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Event</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        // 绑定事件
+        $(function () {
+            $("#btn1").on("dblclick", function () {alert("double click event")});
+        })
+        $(function () {
+            $(".btn").on("click", function () {alert("double click event")});
+        })
+        function addBtn() {
+            $("body").append('<button class="btn">单击事件</button>');
+        }
+    </script>
+</head>
+<body>
+<button id="btn1" class="btn">双击事件</button>
+<button class="btn">单击事件</button>
+</body>
+</html>
