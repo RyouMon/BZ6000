@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>JD Cart</title>
+    <link rel="stylesheet" href="../jdcart_css/reset.css">
+    <link rel="stylesheet" href="../jdcart_css/jd_cart.css">
+    <link rel="stylesheet" href="../jdcart_icon/iconfont.css">
+</head>
+<body>
+    <div class="nav_bg"></div>
+    <div class="main">
+        <div class="top_nav">
+            <ul class="left_nav">
+                <li ><a href=""><i class="iconfont">&#xe8ff;</i>京东首页</a></li>
+                <li ><a href="">配送至:北京</a></li>
+            </ul>
+            <ul class="right_nav">
+                <li ><span>|</span><a href="">网站导航</a></li>
+                <li ><span>|</span><a href="">客户服务</a></li>
+                <li ><span>|</span><a href="">关注京东</a></li>
+                <li ><span>|</span><a href="">京东手机</a></li>
+                <li ><span>|</span><a href="">企业采购</a></li>
+                <li ><span>|</span><a href="">京东会员</a></li>
+                <li ><span>|</span><a href="">我的京东</a></li>
+                <li ><span>|</span><a href="">我的订单</a></li>
+                <li ><a href="">洋洋宝贝</a></li>
+            </ul>
+        </div>
+        <div class="header">
+            <div class="logo"><img src="../jdcart_img/jdlogo-201708-@2x.png" alt="">购物车</div>
+            <div class="search_bar">
+                <form action="">
+                    <input type="text" name="keyword" class="kw_input">
+                    <input type="button" value="搜索" class="search_btn">
+                </form>
+            </div>
+        </div>
+        <div class="cart-filter-bar">
+            <div class="i_title">全部商品</div>
+            <div class="s_area">
+                配送至：
+                <select name="area" id="">
+                    <option value="beijing">北京</option>
+                </select>
+            </div>
+        </div>
+        <div class="jd_cart">
+            <div class="cart-thead">
+                <ul>
+                    <li class="checkbox"><input type="checkbox" value="s1"></li>
+                    <li class="select_all">全选</li>
+                    <li class="product">商品</li>
+                    <li class="price">单价</li>
+                    <li class="quantity">数量</li>
+                    <li class="sum">小计</li>
+                    <li class="action">操作</li>
+                </ul>
+            </div>
+            <div class="cart-list">
+                <div class="item">
+                    <ul>
+                        <li class="checkbox"><input type="checkbox" value="s1"></li>
+                        <li class="p_img"><img src="../jdcart_img/macbookpro.jpg" alt=""></li>
+                        <li class="p_title"><a href="">Apple 2019新品 MacBook Pro 16【带触控栏】<br>九代六核i7 16G 512G</a></li>
+                        <li class="p_sku">颜色：深空灰</li>
+                        <li class="p_price"><p>￥189</p></li>
+                        <li class="p_quantity">
+                            <button>-</button>
+                            <input type="text" value="1">
+                            <button>+</button>
+                        </li>
+                        <li class="p_sum"><p>￥189</p></li>
+                        <li class="p_action">
+                            <a>删除</a><br>
+                            <a>移动到我的关注</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <ul>
+                        <li class="checkbox"><input type="checkbox" value="s1"></li>
+                        <li class="p_img"><img src="../jdcart_img/macbookpro.jpg" alt=""></li>
+                        <li class="p_title"><a href="">Apple 2019新品 MacBook Pro 16【带触控栏】<br>九代六核i7 16G 512G</a></li>
+                        <li class="p_sku">颜色：深空灰</li>
+                        <li class="p_price"><p>￥189</p></li>
+                        <li class="p_quantity">
+                            <button>-</button>
+                            <input type="text" value="1">
+                            <button>+</button>
+                        </li>
+                        <li class="p_sum"><p>￥189</p></li>
+                        <li class="p_action">
+                            <a>删除</a><br>
+                            <a>移动到我的关注</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <ul>
+                        <li class="checkbox"><input type="checkbox" value="s1"></li>
+                        <li class="p_img"><img src="../jdcart_img/macbookpro.jpg" alt=""></li>
+                        <li class="p_title"><a href="">Apple 2019新品 MacBook Pro 16【带触控栏】<br>九代六核i7 16G 512G</a></li>
+                        <li class="p_sku">颜色：深空灰</li>
+                        <li class="p_price"><p>￥189</p></li>
+                        <li class="p_quantity">
+                            <button>-</button>
+                            <input type="text" value="1">
+                            <button>+</button>
+                        </li>
+                        <li class="p_sum"><p>￥189</p></li>
+                        <li class="p_action">
+                            <a href="">删除</a><br>
+                            <a href="">移动到我的关注</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="count">
+                <ul class="selected_actions">
+                    <li><input type="checkbox"></li>
+                    <li><p>全选</p></li>
+                    <li><a href="">删除选中商品</a></li>
+                    <li><a href="">移到我的关注</a></li>
+                    <li><a href="">清除下柜商品</a></li>
+                </ul>
+                <ul class="count_all">
+                    <li><input type="button" value="去结算" class="count_btn"></li>
+                    <li><p>已选择<strong>1</strong>件商品 总价<strong>￥12</strong></p></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

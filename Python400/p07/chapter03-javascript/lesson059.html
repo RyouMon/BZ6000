@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM编程实例1</title>
+    <style>
+        tr {
+            height: 30px;
+        }
+        table, td, th {
+            border: solid 1px;
+        }
+        td, th {
+            width: 200px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table id="tab">
+    <tr>
+        <th>学生姓名</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td>花澤香菜</td>
+        <td>女</td>
+        <td>
+            <button>添加</button>
+            <button>删除</button>
+        </td>
+    </tr>
+    <tr>
+        <td>豊崎愛生</td>
+        <td>女</td>
+        <td>
+            <button onclick=appendEle(document.getElementById("tab"))>添加</button>
+            <button onclick=removeEle(this)>删除</button>
+        </td>
+    </tr>
+    <script>
+        function appendEle (ele) {
+            var tr = document.createElement("tr");
+
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+
+            var ipt1 = document.createElement('input');
+            ipt1.type = "text";
+            ipt1.setAttribute("onblur", "save(this)")
+            td1.appendChild(ipt1);
+            var ipt2 = document.createElement('input');
+            ipt2.type = "text";
+            ipt2.setAttribute("onblur", "save(this)")
+            td2.appendChild(ipt2);
+
+            td3.innerHTML = "<button onclick='appendEle(document.getElementById(\"tab\"))'>添加</button>" +
+                "<button onclick='removeEle(this)'>删除</button>";
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+
+            ele.appendChild(tr);
+        }
+
+        function save(ele) {
+            var value = ele.value;
+            var td = ele.parentNode;
+            var text = document.createTextNode(value);
+            td.replaceChild(text, ele);
+        }
+
+        function removeEle(ele) {
+            var tr = ele.parentNode.parentNode;
+            var table = tr.parentNode;
+
+            table.removeChild(tr);
+
+        }
+    </script>
+</table>
+</body>
+</html>

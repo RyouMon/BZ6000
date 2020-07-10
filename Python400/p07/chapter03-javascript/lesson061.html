@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <style>
+        #outer{
+            width:500px;
+            margin:0 auto;
+        }
+        p{
+            height: 30px;
+        }
+    </style>
+    <script>
+        function checkUsername() {
+            return checkInput("username", /[\u4e00-\u9fa5]{3,5}/);
+        }
+        function checkPassword() {
+            return checkInput("pwd", /.{8,16}/)
+        }
+        function checkPhone() {
+            return checkInput("phone", /\d{11}/);
+        }
+        function checkMail() {
+            return checkInput("mail", /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/)
+        }
+        function checkInput(id, pattern) {
+            var ele = document.getElementById(id);
+            var value = ele.value;
+            var alt = ele.alt;
+            var result = document.getElementById(id + "_span");
+            if (value == null || value === "") {
+                result.style.color = "red";
+                result.innerText = "❌请输入" + alt;
+                return false;
+            }
+            if (pattern.test(value)) {
+                result.style.color = "green";
+                result.innerText = "✔";
+                return true;
+            } else {
+                result.style.color = "red";
+                result.innerText = "❌" + alt + "输入有误";
+                return false;
+            }
+        }
+        function checkSex(id) {
+            var opts = document.getElementById("sex").childNodes;
+            var result = document.getElementById("sex_span");
+            if (opts[0].selected) {
+                result.color = "red";
+                result.innerText = "请选择";
+                return false;
+            }
+            for (var i in opts) {
+                if (opts[i].checked) {
+                    result.style.color = "green"
+                    result.innerText = "✔";
+                    return true;
+                }
+            }
+            result.color = "red";
+            result.innerText = "请选择";
+            return false;
+        }
+
+        function checkNative() {
+            var sel = document.getElementById("native");
+            var result = document.getElementById("native_span");
+            if (sel.value === "0") {
+                result.style.color = "red";
+                result.innerText = "请选择";
+                return false;
+            } else {
+                result.style.color = "green";
+                result.innerText = "选择成功";
+                return true;
+            }
+        }
+
+        function checkAgree() {
+            var ele = document.getElementById("agree");
+            var btn = document.getElementById("submit");
+            if (ele.checked) {
+                btn.disabled = null;
+            } else {
+                btn.disabled = "disabled";
+            }
+        }
+
+        function checkAll() {
+            return checkUsername() && checkPassword() && checkPhone() && checkMail() && checkSex() && checkNative();
+        }
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center">注册页面</h2>
+    <hr />
+    <div id="outer">
+        <div style="float: left; width: 100px">
+            <p>用户名：</p>
+            <p>密码：</p>
+            <p>手机号：</p>
+            <p>邮箱：</p>
+            <p>性别：</p>
+            <p>爱好：</p>
+            <p></p>
+            <p>籍贯：</p>
+            <p></p>
+            <p>个人介绍：</p>
+        </div>
+
+        <div style="float: left; width: 400px">
+            <form onsubmit="return checkAll()">
+            <p><input type="text" id="username" onblur="checkUsername()" alt="用户名"> <span id="username_span">请输入3-5个汉字</span></p>
+            <p><input type="password" id="pwd" onblur="checkPassword()" alt="密码"> <span id="pwd_span">请输入8-16位密码</span></p>
+            <p><input type="text" id="phone" onblur="checkPhone()" alt="手机号"> <span id="phone_span">请输入手机号</span></p>
+            <p><input type="text" id="mail" onblur="checkMail()" alt="邮箱"> <span id="mail_span">请输入邮箱</span></p>
+            <p id="sex">
+                男：<input type="radio" name="sex" value="male" onclick="checkSex()">
+                女：<input type="radio" name="sex" value="female" onclick="checkSex()"> <span id="sex_span"></span>
+            </p>
+            <p id="fond">
+                <input type="checkbox" >唱歌<input type="checkbox">睡觉<input type="checkbox">LOL <br> <br>
+                <input type="checkbox">旅游<input type="checkbox">高尔夫<input type="checkbox">篮球
+            </p>
+            <p></p>
+            <p>
+                <select name="native" id="native" onchange="checkNative()">
+                    <option value="0">--请选择--</option>
+                    <option value="1">北京</option>
+                    <option value="2">上海</option>
+                </select> <span id="native_span"></span>
+            </p>
+            <p style="height: auto"><textarea name="self-introduction" cols="30" rows="10"></textarea></p>
+            <p><input type="checkbox" id="agree" onclick="checkAgree()">是否同意本公司协议</p>
+            <p><input type="submit" value="注册" id="submit" disabled></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <style>
+        #outer{
+            width:400px;
+            margin:0 auto;
+        }
+        p{
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center">注册页面</h2>
+    <hr />
+    <div id="outer">
+        <div style="float: left; width: 100px">
+            <p>用户名：</p>
+            <p>密码：</p>
+            <p>手机号：</p>
+            <p>邮箱：</p>
+            <p>性别：</p>
+            <p>爱好：</p>
+            <p></p>
+            <p>籍贯：</p>
+            <p></p>
+            <p>个人介绍：</p>
+        </div>
+
+        <div style="float: left; width: 300px">
+            <p><input type="text"></p>
+            <p><input type="text"></p>
+            <p><input type="text"></p>
+            <p><input type="text"></p>
+            <p>男：<input type="radio" name="sex" value="male" checked>女：<input type="radio" name="sex" value="female"></p>
+            <p><input type="checkbox">唱歌<input type="checkbox">睡觉<input type="checkbox">LOL <br>
+            <p><input type="checkbox">旅游<input type="checkbox">高尔夫<input type="checkbox">篮球</p>
+            <p><select name="native">
+                <option value="null">--请选择--</option>
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+            </select></p>
+            <p style="height: auto"><textarea name="self-introduction" cols="30" rows="10"></textarea></p>
+            <p><input type="checkbox">是否同意本公司协议</p>
+            <p><input type="submit" value="注册"></p>
+        </div>
+    </div>
+</body>
+</html>

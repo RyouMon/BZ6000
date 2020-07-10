@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jumping heart</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            box-shadow: 30px 30px 50px hotpink;
+            animation: jump 2s infinite;
+        }
+        #left, #right {
+            border-radius: 100px;
+        }
+        #left {
+            position: absolute;
+            top: 215px;
+            left: 301px;
+        }
+        #right {
+            position: absolute;
+            top: 215px;
+            left: 442px;
+        }
+        #bottom {
+            transform: rotate(45deg);
+            position: absolute;
+            top: 285px;
+            left: 372px;
+        }
+
+        @keyframes jump {
+            0% {}
+            50% {transform: scale(1.1) rotate(45deg)}
+            100% {}
+        }
+    </style>
+</head>
+<body>
+    <div class="heart" id="left"></div>
+    <div class="heart" id="right"></div>
+    <div class="heart" id="bottom"></div>
+
+</body>
+</html>
