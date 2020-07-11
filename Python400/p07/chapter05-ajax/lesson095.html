@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax 的基本使用</title>
+</head>
+<body>
+<h1>AJAX的基本使用</h1>
+<script>
+    // 创建AJAX对象
+    var xhr = new XMLHttpRequest();
+    // 设置请求方式和目标
+    xhr.open("get", "https://httpbin.org/get");
+    // 发送请求
+    xhr.send();
+    // 处理响应
+    xhr.onload = function () {
+        var node = document.createTextNode(xhr.responseText)
+        document.body.appendChild(node);
+    };
+
+</script>
+</body>
+</html>
