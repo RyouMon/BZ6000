@@ -1,0 +1,219 @@
+
+
+.main {
+    height: 25px;
+    background-color: #eeeeee;
+}
+
+.main>div {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/*超链接样式*/
+a {
+    text-decoration: none;
+}
+
+/*导航*/
+.top_nav li {
+    margin-bottom: 20px;
+}
+
+.top_nav a {
+    color: gray;
+}
+
+.left_nav li {
+    float: left;
+    margin-right: 20px;;
+}
+
+.right_nav li {
+    float: right;
+    margin-left: 10px;
+}
+
+.top_nav span {
+    margin-right: 10px;
+}
+
+
+/*网页头*/
+.logo {
+    /*height: 20px;*/
+    float: left;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.search_bar {
+    float: right;
+    margin-top: 30px;
+}
+
+.search_btn {
+    color: white;
+    width: 50px;
+    height: 30px;
+    border: 0;
+    background-color: #C91623;
+    position: relative;
+    left: -6px;
+}
+
+.kw_input {
+    height: 23px;
+    width: 200px;
+    border: solid 3px #C91623;
+}
+
+
+/*全部商品*/
+.i_title {
+    clear: both;
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+    color: #C91623;
+    margin-top: 40px;
+    border-bottom: solid 4px #C91623;
+}
+
+.s_area {
+    margin-top: 45px;
+    float: right;
+}
+
+
+/*购物车表头*/
+.cart-thead {
+    height: 40px;
+    background-color: #eeeeee;
+}
+
+.cart-thead:first-child {
+    clear: left;
+}
+
+.cart-thead li {
+    float: left;
+    padding-top: 8px;
+}
+
+.product{
+    position: relative;
+    left: 50px;
+}
+
+.price{
+    position: relative;
+    left: 500px;
+}
+
+.quantity{
+    position: relative;
+    left: 600px;
+}
+
+.sum{
+    position: relative;
+    left: 690px;
+}
+
+.action{
+    position: relative;
+    left: 750px;
+}
+/*购物车商品*/
+.item {
+    height: 100px;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #FFF4E5;
+}
+
+
+.item, .p_img {
+    border: solid 1px gray;
+}
+
+.item ul:first-child{
+    clear: left;
+}
+.item li {
+    float: left;
+}
+
+.p_title {
+    position: relative;
+    left: 10px;
+}
+
+.p_sku {
+    position: relative;
+    left: 10px;
+}
+.p_price {
+    position: relative;
+    left: 30px;
+}
+
+.p_quantity {
+    position: relative;
+    left: 107px;
+}
+.p_quantity input{
+    width: 20px;
+}
+
+.p_sum {
+    position: relative;
+    left: 160px;
+}
+
+.p_action {
+    position: relative;
+    left: 173px;
+}
+
+/*结算*/
+.count {
+    height: 50px;
+    line-height: 50px;
+    border: solid 1px gray;
+}
+.selected_actions:first-child:first-child {
+    clear: left;
+}
+
+.selected_actions li {
+    float: left;
+    margin-left: 10px
+}
+.count_all li {
+    margin-left: 5px;
+    float: right;
+}
+
+.count_all strong {
+    font-size: 30px;
+    color: red;
+}
+
+.count_btn {
+    width: 70px;
+    height: 50px;
+    border: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #C91623;
+}
+
+a:hover {
+    color: red;
+}
