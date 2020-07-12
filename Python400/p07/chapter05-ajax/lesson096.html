@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX请求中传递参数</title>
+</head>
+<body>
+用户名：<input id="username" type="text"><br>密码：<input id="password" type="text"><br>
+<button onclick="passParamUseGetByString()">GET参数传递</button>
+<button onclick="passParamUsePostByString()">字符串传递</button>
+<button onclick="passParamUsePostByJson()">JSON传递</button>
+<h1>Response:</h1>
+<div id="response"></div>
+<script>
+
+    function passParamUseGetByString() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var baseUrl = "https://httpbin.org/get";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", baseUrl + param);
+        xhr.send();
+        xhr.onload = function() {
+            document.getElementById("response").innerText = xhr.responseText;
+        }
+    }
+
+    function passParamUsePostByString() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var baseUrl = "https://httpbin.org/post";
+        var param = "username=" + username + "&password=" + password;
+        var xhr = new XMLHttpRequest();
+        xhr.open("post", baseUrl);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send(param);
+        xhr.onload = function() {
+            document.getElementById("response").innerText = xhr.responseText;
+        }
+    }
+
+    function passParamUsePostByJson() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var baseUrl = "https://httpbin.org/post";
+        var param = {"username": username, "password": password};
+        param = JSON.stringify(param);
+        var xhr = new XMLHttpRequest();
+        xhr.open("post", baseUrl);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(param);
+        xhr.onload = function() {
+            document.getElementById("response").innerText = xhr.responseText;
+        }
+    }
+</script>
+</body>
+</html>
