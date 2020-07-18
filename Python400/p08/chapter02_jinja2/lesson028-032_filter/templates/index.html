@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jinja Filters</title>
+    <style>
+        p {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jinja 过滤器</h1>
+
+    <h2>内置过滤器</h2>
+
+    <h3>default filter</h3>
+        <p>{{ps|default('这个人很懒没有留下个性签名', boolean=True)}}</p>
+
+    <h3>abs filter</h3>
+        <p>abs(-1) = {{number|abs()}}</p>
+
+    <h3>escape filter, safe filter, striptags filter</h3>
+        <!-- default open-->
+        <p>{{xml}}</p>
+        <p>just alert{{xml|safe()}}</p>
+        <p>{{xml|striptags}}</p>
+
+    <h3>first filter, last filter, length filter</h3>
+        <p>list: {{person}}</p>
+        <p>length is {{person|length()}}.</p>
+        <p>first element is {{person|first()}}.</p>
+        <p>last element is {{person|last()}}.</p>
+
+    <h3>replace filter, truncate filter</h3>
+        <p>{{words|replace('uc', 'xx')}}</p>
+        <p>length limit 5: {{words|truncate(5, True, '...', 2)}}</p>
+
+    <h2>自定义过滤器</h2>
+
+    <h3>发布时间过滤器</h3>
+        <p>{{time1}} -filter-> {{time1|time_format()}}</p>
+        <p>{{time2}} -filter-> {{time2|time_format()}}</p>
+        <p>{{time3}} -filter-> {{time3|time_format()}}</p>
+        <p>{{time4}} -filter-> {{time4|time_format()}}</p>
+        <p>{{time5}} -filter-> {{time5|time_format()}}</p>
+        <p>{{time6}} -filter-> {{time6|time_format()}}</p>
+        <p>{{time7}} -filter-> {{time7|time_format()}}</p>
+</body>
+</html>
