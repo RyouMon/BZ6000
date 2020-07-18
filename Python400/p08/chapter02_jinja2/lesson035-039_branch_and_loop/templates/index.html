@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Branch and Loop Statement</title>
+    <style>
+        td {
+            border: solid black 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1>分支和循环语句</h1>
+    <h2>IF分支语句</h2>
+    {% if age < 18 %}
+        <p>这个人是未成年人，不允许入内</p>
+    {% else %}
+        <p>已成年请入内</p>
+    {% endif %}
+    <h2>FOR循环语句 打印99乘法表</h2>
+    <table>
+        {% for i in range(9) %}
+            <tr>
+            {% for j in range(i + 1) %}
+                <td>{{j + 1}} * {{i + 1}} = {{(i + 1) * (j + 1)}}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
