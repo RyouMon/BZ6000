@@ -11,12 +11,36 @@
 </head>
 <body>
     <h1>分支和循环语句</h1>
+
     <h2>IF分支语句</h2>
     {% if age < 18 %}
         <p>这个人是未成年人，不允许入内</p>
     {% else %}
         <p>已成年请入内</p>
     {% endif %}
+
+    <h2>FOR循环遍历列表</h2>
+    <ul>
+        {% for each in users %}
+            <li>{{each}}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>FOR循环遍历字典</h2>
+        <table>
+            <tr>
+            {% for key in person.keys() %}
+                <th>{{key}}</th>
+            {% endfor %}
+            </tr>
+            <tr>
+            {% for value in person.values() %}
+                <td>{{value}}</td>
+            {% endfor %}
+            </tr>
+        </table>
+
+
     <h2>FOR循环语句 打印99乘法表</h2>
     <table>
         {% for i in range(9) %}
