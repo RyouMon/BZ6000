@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Macro</title>
+</head>
+<body>
+    {% macro input(name, value="", type="text") %}
+        {{ name }}: <input type={{ type }} name={{ name }} value={{ value}}>
+    {% endmacro %}
+
+    <h1>Macro And Import Tag</h1>
+
+    <h2>Macro</h2>
+    <p>{{ input('username') }}</p>
+    <p>{{ input('password', type='password') }}</p>
+
+    <h2>Import Macro From Other Template</h2>
+    {% import 'form.html' as form %}
+    <p>{{ form.input('username') }}</p>
+    <p>{{ form.input('password', type='password') }}</p>
+</body>
+</html>
