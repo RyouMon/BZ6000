@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Base Template {% endblock %}</title>
+</head>
+<body>
+    <p>Inherit from base template.</p>
+    {% block p %}
+        <p>Hi! from parent.</p>
+    {% endblock %}
+    <p>Inherit from base template.</p>
+</body>
+</html>

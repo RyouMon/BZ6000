@@ -1,0 +1,12 @@
+{% extends "child.html" %}
+
+{% block title %}
+    Grandchild Template
+{% endblock %}
+
+{% block p %}
+    super.super(): {{ super.super() }}
+    super(): {{ super() }}
+    <p>self: </p>
+    <p>Hi! from grandchild.</p>
+{% endblock %}
