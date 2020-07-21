@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Set and With</title>
+</head>
+<body>
+    <h2>Inter</h2>
+    {% set outer = 'outer' %}
+    {% with inter = 'inter' %}
+        <p>{{ inter }}</p>
+    {% endwith %}
+    <h2>Outer</h2>
+    <p>{{ outer }}</p>
+    <p>{{ inter }}</p>
+</body>
+</html>
