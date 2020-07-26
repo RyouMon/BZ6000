@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Context Processor</title>
+</head>
+<body>
+<p>
+    被context_processor注册的函数应该返回一个字典，字典中包含的关键字参数在模板中可以直接访问。
+</p>
+<table>
+    <tr>
+        <td>User:</td>
+        <td>{{ username }}</td>
+    </tr>
+    <tr>
+        <td>Age:</td>
+        <td>{{ age }}</td>
+    </tr>
+</table>
+</body>
+</html>
