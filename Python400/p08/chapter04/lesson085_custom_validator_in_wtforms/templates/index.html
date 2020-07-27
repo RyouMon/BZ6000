@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Validator In WTForms</title>
+    <style>
+        #code {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<form action="/validator/" method="post">
+    <table>
+        <tr>
+            <th>验证码：</th>
+            <td><input type="text" name="code"></td>
+            <td id="code">{{ code }}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
