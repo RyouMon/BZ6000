@@ -9,7 +9,7 @@ register_converter(converters.FourDigitYearConverter, 'yyyy')
 
 urlpatterns = [
     path('', views.index),
-    path('2003', views.special_case_2003),
+    path('2003', views.special_case_2003, {'msg': 'this is a special case.'}),
     # path('<int:year>', views.year_archive),
     # path('<int:year>/<int:mouth>', views.mouth_archive),
     # path('<int:year>/<int:mouth>/<slug:slug>', views.article_detail),

@@ -8,8 +8,9 @@ def index(request):
     return HttpResponse('hello world!')
 
 
-def special_case_2003(request):
-    return HttpResponse('2003')
+def special_case_2003(request, **kwargs):
+    msg = kwargs.pop('msg', None)
+    return HttpResponse(f'2003, msg from func path(): {msg}')
 
 
 def year_archive(request, year):
