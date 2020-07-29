@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 
@@ -27,3 +28,7 @@ def article_detail(request, year, mouth, slug):
 
 def page(request, num=1):
     return HttpResponse(f'blog page {num}')
+
+
+def redirect_to_year(request, year):
+    return HttpResponseRedirect(reverse('new-year-archive', args=(year,)))
