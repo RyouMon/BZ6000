@@ -7,6 +7,9 @@ from . import views, converters
 register_converter(converters.FourDigitYearConverter, 'yyyy')
 
 
+app_name = 'process_http_request'
+
+
 urlpatterns = [
     path('', views.index),
     path('2003', views.special_case_2003, {'msg': 'this is a special case.'}),

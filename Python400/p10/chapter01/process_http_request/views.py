@@ -31,4 +31,4 @@ def page(request, num=1):
 
 
 def redirect_to_year(request, year):
-    return HttpResponseRedirect(reverse('new-year-archive', args=(year,)))
+    return HttpResponseRedirect(reverse('process_http_request:new-year-archive', args=(year,)))
