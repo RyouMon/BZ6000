@@ -19,4 +19,6 @@ urlpatterns = [
     re_path(r'^(?P<year>\d{4})/$', views.year_archive),
     re_path(r'^(?P<year>\d{4})/(?P<mouth>\d{2})/$', views.mouth_archive),
     re_path(r'^(?P<year>\d{4})/(?P<mouth>\d{2})/(?P<slug>[\w-]+)/$', views.article_detail),
+    path('blog/', views.page),
+    path('blog/page-<int:num>/', views.page)
 ]

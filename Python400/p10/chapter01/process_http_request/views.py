@@ -22,3 +22,7 @@ def mouth_archive(request, year, mouth):
 
 def article_detail(request, year, mouth, slug):
     return HttpResponse(f'archive year {year}, archive mouth {mouth}, article {slug}.')
+
+
+def page(request, num=1):
+    return HttpResponse(f'blog page {num}')
