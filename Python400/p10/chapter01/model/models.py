@@ -11,3 +11,13 @@ class Manufacture(models.Model):
 class Car(models.Model):
     product = models.CharField(max_length=10)
     manufacture = models.ForeignKey('Manufacture', on_delete=models.CASCADE)
+
+
+# many-to-many relationships
+class Topping(models.Model):
+    name = models.CharField(max_length=10)
+
+
+class Pizza(models.Model):
+    name = models.CharField(max_length=10)
+    toppings = models.ManyToManyField(Topping)
