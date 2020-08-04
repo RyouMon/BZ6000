@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'process_http_request.apps.ProcessHttpRequestConfig',
-    'model.apps.ModelConfig',
+    'model_learning.apps.ModelConfig',
     'view.apps.ViewConfig'
 ]
 
