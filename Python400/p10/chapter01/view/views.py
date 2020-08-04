@@ -7,3 +7,7 @@ from django.http import HttpResponse
 class MyView(View):
     def get(self, request):
         return HttpResponse('Response by class-based view.')
+
+
+def test_render(request):
+    return render(request, 'view/test_render.html')
