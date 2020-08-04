@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'process_http_request.apps.ProcessHttpRequestConfig',
     'model_learning.apps.ModelConfig',
-    'view.apps.ViewConfig'
+    'view_learning.apps.ViewConfig'
 ]
 
 MIDDLEWARE = [
