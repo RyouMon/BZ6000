@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter</title>
+</head>
+<body>
+    <h1>Add</h1>
+    <p>{{ num }} + 1 = {{ num|add:"1" }}</p>
+    <h1>Capfirst</h1>
+    <p>{{ word|capfirst }}</p>
+    <h1>Cut</h1>
+    <p>{{ word|cut:" " }}</p>
+    <h1>Date</h1>
+    <p>{{ date|date:'Y-m-d H:i:s' }}</p>
+    <h1>Divisibleby</h1>
+    {{ num|divisibleby:"5" }}
+</body>
+</html>
