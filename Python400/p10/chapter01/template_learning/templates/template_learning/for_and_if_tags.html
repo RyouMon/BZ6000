@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For And If Tags</title>
+</head>
+<body>
+<h1>For Tag</h1>
+<p>Student list:</p>
+<ul>
+    {% for student in students %}
+        <li> {{ student.name }} </li>
+    {% endfor %}
+</ul>
+
+<h1>For Empty</h1>
+<p>Boy list:</p>
+<ul>
+    {% for student in boys %}
+        <li> {{ student.name }} </li>
+    {% empty %}
+        <li>No boy in students.</li>
+    {% endfor %}
+</ul>
+
+<h1>If Tag</h1>
+<p>Student list:</p>
+<ul>
+    {% for student in students %}
+        <li> {{ student.name }} :
+            {% if student.sex == 'w' %}girl{% else %}boy{% endif %}
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
