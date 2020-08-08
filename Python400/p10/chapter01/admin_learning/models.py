@@ -33,12 +33,15 @@ class Restaurant(models.Model):
 
 
 class Waiter(models.Model):
+    SEX_CHOICE = ((0, '未知'), (1, '男'), (2, '女'))
+
     name = models.CharField(max_length=128, verbose_name='姓名')
     restaurant = models.ForeignKey(
         Restaurant,
         on_delete=models.CASCADE,
         verbose_name='所属饭店'
     )
+    sex = models.IntegerField(choices=SEX_CHOICE, default=0, verbose_name='性别')
 
     class Meta:
         verbose_name_plural = verbose_name = '服务员'
