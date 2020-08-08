@@ -21,5 +21,6 @@ urlpatterns = [
     path('phr/', include('process_http_request.urls')),
     path('view/', include('view_learning.urls')),
     path('temp/', include('template_learning.urls')),
+    path('session/', include('session_learning.urls')),
     path('admin/', admin.site.urls),
 ]

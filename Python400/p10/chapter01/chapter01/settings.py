@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'view_learning.apps.ViewConfig',
     'template_learning.apps.TemplateLearningConfig',
     'admin_learning.apps.AdminLearningConfig',
-    'session_and_auth_learning.apps.SessionAndAuthLearningConfig',
+    'session_learning.apps.SessionAndAuthLearningConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# using session via cookies
+# SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
