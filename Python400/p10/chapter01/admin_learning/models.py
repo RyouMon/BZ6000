@@ -42,6 +42,7 @@ class Waiter(models.Model):
         verbose_name='所属饭店'
     )
     sex = models.IntegerField(choices=SEX_CHOICE, default=0, verbose_name='性别')
+    age = models.IntegerField(default=0, verbose_name='年龄')
 
     class Meta:
         verbose_name_plural = verbose_name = '服务员'
