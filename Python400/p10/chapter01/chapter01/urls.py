@@ -22,5 +22,6 @@ urlpatterns = [
     path('view/', include('view_learning.urls')),
     path('temp/', include('template_learning.urls')),
     path('session/', include('session_learning.urls')),
+    path('paginator/', include('paginator_learning.urls')),
     path('admin/', admin.site.urls),
 ]
