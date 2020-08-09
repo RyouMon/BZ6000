@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'template_learning.apps.TemplateLearningConfig',
     'admin_learning.apps.AdminLearningConfig',
     'session_learning.apps.SessionAndAuthLearningConfig',
+    'paginator_learning.apps.PaginatorLearningConfig',
 ]
 
 MIDDLEWARE = [
