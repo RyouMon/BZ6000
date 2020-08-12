@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'captcha_learning.apps.CaptchaLearningConfig',
+    'middleware_learning.apps.MiddlewareLearningConfig',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middleware_learning.middleware.FirstMiddleware',
+    'middleware_learning.middleware.SecondMiddleware',
+    'middleware_learning.middleware.ThirdMiddleware',
 ]
 
 ROOT_URLCONF = 'chapter02.urls'
