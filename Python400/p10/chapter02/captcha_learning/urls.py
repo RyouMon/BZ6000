@@ -10,5 +10,6 @@ app_name = 'captcha_learning'
 urlpatterns = [
     path('', views.index, name='index'),
     path('login/', views.login, name='login'),
-    path('captcha/', views.captcha_img, name='captcha_img')
+    path('logout/', views.logout, name='logout'),
+    path('captcha/', views.captcha_img, name='captcha_img'),
 ]

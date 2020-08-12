@@ -6,5 +6,6 @@
 </head>
 <body>
     <p>Welcome, {{ request.user.username }}</p>
+    <a href="{% url 'captcha_learning:logout' %}">Logout</a>
 </body>
 </html>

@@ -51,3 +51,8 @@ def captcha_img(request):
     img.save(stream, 'PNG')
     request.session['verify_code'] = code
     return HttpResponse(stream.getvalue())
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('captcha_learning:login')

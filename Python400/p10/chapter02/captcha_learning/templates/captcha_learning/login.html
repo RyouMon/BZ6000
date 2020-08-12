@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <script>
+        function refresh_captcha(th) {
+            // 加上随机参数是为了让浏览器不使用缓存
+            th.setAttribute('src', '{% url 'captcha_learning:captcha_img' %}?r=' + Math.random());
+        }
+    </script>
 </head>
 <body>
 <form action="" method="post">
@@ -19,7 +25,7 @@
         <tr>
             <td>Code: </td>
             <td><input type="text" name="verify_code"></td>
-            <td><img src="{% url 'captcha_learning:captcha_img' %}" alt="verify_code"></td>
+            <td><img src="{% url 'captcha_learning:captcha_img' %}" alt="verify_code" onclick="refresh_captcha(this)"></td>
         </tr>
         <tr>
             <td>
