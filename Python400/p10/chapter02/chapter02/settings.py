@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'captcha_learning.apps.CaptchaLearningConfig',
     'middleware_learning.apps.MiddlewareLearningConfig',
+    'logging_learning.apps.LoggingLearningConfig',
 ]
 
 MIDDLEWARE = [
