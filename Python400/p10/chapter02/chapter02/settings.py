@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'captcha_learning.apps.CaptchaLearningConfig',
     'middleware_learning.apps.MiddlewareLearningConfig',
     'logging_learning.apps.LoggingLearningConfig',
+    'signal_learning.apps.SignalLearningConfig',
 ]
 
 MIDDLEWARE = [
