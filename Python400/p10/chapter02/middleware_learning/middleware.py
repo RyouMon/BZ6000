@@ -15,6 +15,9 @@ class FirstMiddleware(MiddlewareMixin):
         print(f'{self.__class__.__name__}: process template response')
         return response
 
+    def process_view(self, request, view_func, view_args, view_kwargs):
+        print(f'{self.__class__.__name__}: process view')
+
 
 class SecondMiddleware(MiddlewareMixin):
     def process_request(self, request):
@@ -29,6 +32,10 @@ class SecondMiddleware(MiddlewareMixin):
         response.context_data = {'msg': 'Here is a Massage from SecondMiddleware'}
         return response
 
+    def process_view(self, request, view_func, view_args, view_kwargs):
+        print(f'{self.__class__.__name__}: process view')
+        return view_func(request)
+
 
 class ThirdMiddleware(MiddlewareMixin):
     def process_request(self, request):
@@ -42,3 +49,7 @@ class ThirdMiddleware(MiddlewareMixin):
         print(f'{self.__class__.__name__}: process template response')
         print(response.is_rendered)
         return response
+
+    def process_view(self, request, view_func, view_args, view_kwargs):
+        # This method will not be called.
+        print(f'{self.__class__.__name__}: process view')
