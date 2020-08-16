@@ -51,9 +51,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'middleware_learning.middleware.FirstMiddleware',
-    'middleware_learning.middleware.SecondMiddleware',
-    'middleware_learning.middleware.ThirdMiddleware',
+    # 'middleware_learning.middleware.FirstMiddleware',
+    # 'middleware_learning.middleware.SecondMiddleware',
+    # 'middleware_learning.middleware.ThirdMiddleware',
 ]
 
 ROOT_URLCONF = 'chapter02.urls'
