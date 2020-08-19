@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.cache.UpdateCacheMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     # 'middleware_learning.middleware.FirstMiddleware',
     # 'middleware_learning.middleware.SecondMiddleware',
     # 'middleware_learning.middleware.ThirdMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
 ROOT_URLCONF = 'chapter02.urls'
@@ -184,8 +184,8 @@ CACHES = {
     },
 }
 
-CACHE_MIDDLEWARE_ALIAS = 'default'
-
-CACHE_MIDDLEWARE_KEY_PREFIX = 'django_learning'
-
-CACHE_MIDDLEWARE_SECONDS = 100
+# CACHE_MIDDLEWARE_ALIAS = 'default'
+#
+# CACHE_MIDDLEWARE_KEY_PREFIX = 'django_learning'
+#
+# CACHE_MIDDLEWARE_SECONDS = 100
