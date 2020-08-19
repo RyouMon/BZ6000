@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'middleware_learning.apps.MiddlewareLearningConfig',
     'logging_learning.apps.LoggingLearningConfig',
     'signal_learning.apps.SignalLearningConfig',
+    'cache_learning.apps.CacheLearningConfig',
 ]
 
 MIDDLEWARE = [
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,6 +56,7 @@ MIDDLEWARE = [
     # 'middleware_learning.middleware.FirstMiddleware',
     # 'middleware_learning.middleware.SecondMiddleware',
     # 'middleware_learning.middleware.ThirdMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
 ROOT_URLCONF = 'chapter02.urls'
@@ -169,3 +172,20 @@ LOGGING = {
         }
     },
 }
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        },
+        'TIMEOUT': 10,
+    },
+}
+
+CACHE_MIDDLEWARE_ALIAS = 'default'
+
+CACHE_MIDDLEWARE_KEY_PREFIX = 'django_learning'
+
+CACHE_MIDDLEWARE_SECONDS = 100
