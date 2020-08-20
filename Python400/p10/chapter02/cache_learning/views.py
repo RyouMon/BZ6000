@@ -1,4 +1,5 @@
 import datetime
+from django.shortcuts import render
 from django.http import HttpResponse
 
 
@@ -16,3 +17,8 @@ def view(request):
 def cached_view(request):
     time = datetime.datetime.now()
     return HttpResponse(f'这个页面已经被缓存，有效期60秒，上次的缓存时间：{time}')
+
+
+def cached_template(request):
+    time = datetime.datetime.now()
+    return render(request, 'cache_learning/test_template_fragment_caching.html', {'time': time})

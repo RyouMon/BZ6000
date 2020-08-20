@@ -1,0 +1,13 @@
+{% load cache %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Template Fragment Caching</title>
+</head>
+<body>
+    {% cache 10 result %}
+        <p>这个片段已经被缓存，上次缓存的时间：{{ time|date:"r" }}</p>
+    {% endcache %}
+</body>
+</html>
