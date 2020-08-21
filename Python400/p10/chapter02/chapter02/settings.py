@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'logging_learning.apps.LoggingLearningConfig',
     'signal_learning.apps.SignalLearningConfig',
     'cache_learning.apps.CacheLearningConfig',
+    'celery_learning.apps.CeleryLearningConfig',
 ]
 
 MIDDLEWARE = [
