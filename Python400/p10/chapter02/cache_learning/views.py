@@ -1,6 +1,10 @@
 import datetime
+from time import sleep
 from django.shortcuts import render
 from django.http import HttpResponse
+
+# Equal to django.core.cache.caches['default']
+from django.core.cache import cache
 
 
 # Create your views here.
@@ -22,3 +26,18 @@ def cached_view(request):
 def cached_template(request):
     time = datetime.datetime.now()
     return render(request, 'cache_learning/test_template_fragment_caching.html', {'time': time})
+
+
+def test_cache_api(request):
+
+    def delay_result():
+        # return 1 after 3 second
+        sleep(3)
+        return 1
+
+    result = cache.get('result')
+    if not result:
+        cache.add('result', delay_result())
+        result = cache.get('result')
+
+    return HttpResponse(f'The result is {result}.')

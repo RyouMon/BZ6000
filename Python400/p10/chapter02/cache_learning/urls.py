@@ -9,4 +9,5 @@ urlpatterns = [
     path('view/', views.view),
     path('cached_view/', cache_page(60)(views.cached_view)),
     path('cached_template/', views.cached_template),
+    path('api_test/', views.test_cache_api),
 ]
