@@ -22,5 +22,6 @@ urlpatterns = [
     path('log/', include('logging_learning.urls')),
     path('signal/', include('signal_learning.urls')),
     path('cache/', include('cache_learning.urls')),
+    path('celery/', include('celery_learning.urls')),
     path('admin/', admin.site.urls),
 ]
