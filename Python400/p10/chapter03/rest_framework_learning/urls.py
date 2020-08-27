@@ -8,10 +8,10 @@ from . import views
 app_name = 'rest_framework_learning'
 
 urlpatterns = [
-    path('students/', views.students),
-    path('students/<int:pk>/', views.student_detail),
-    path('groups/', views.groups),
-    path('groups/<int:pk>/', views.group_detail),
+    path('students/', views.StudentList.as_view()),
+    path('students/<int:pk>/', views.StudentDetail.as_view()),
+    path('groups/', views.GroupList.as_view()),
+    path('groups/<int:pk>/', views.GroupDetail.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
