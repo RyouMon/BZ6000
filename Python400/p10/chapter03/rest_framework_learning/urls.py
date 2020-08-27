@@ -9,4 +9,6 @@ app_name = 'rest_framework_learning'
 urlpatterns = [
     path('students/', views.students),
     path('students/<int:pk>/', views.student_detail),
+    path('groups/', views.groups),
+    path('groups/<int:pk>/', views.group_detail),
 ]

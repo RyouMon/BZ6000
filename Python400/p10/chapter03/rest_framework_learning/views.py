@@ -49,3 +49,49 @@ def student_detail(request, pk):
     elif request.method == 'DELETE':
         student.delete()
         return HttpResponse(status=204)
+
+
+@csrf_exempt
+def groups(request):
+    """
+    list all groups, or create a new group.
+    """
+    if request.method == 'GET':
+        group_li = models.Group.objects.all()
+        serializer = serializers.GroupSerializer(group_li, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = serializers.GroupSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(data, status=201)
+        return JsonResponse(serializer.errors, status=400)
+
+
+@csrf_exempt
+def group_detail(request, pk):
+    """
+    Retrieve, update or delete a group.
+    """
+    try:
+        group = models.Group.objects.get(pk=pk)
+    except models.Group.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = serializers.GroupSerializer(group)
+        return JsonResponse(serializer.data)
+
+    elif request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = serializers.GroupSerializer(group, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, safe=True)
+        return JsonResponse(serializer.errors, status=400)
+
+    elif request.method == 'DELETE':
+        group.delete()
+        return HttpResponse(status=204)
