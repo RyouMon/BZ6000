@@ -3,7 +3,7 @@
 # from rest_framework.views import APIView
 # from rest_framework.response import Response
 # from rest_framework import status
-from rest_framework import mixins
+# from rest_framework import mixins
 from rest_framework import generics
 from . import models
 from . import serializers
@@ -101,37 +101,20 @@ from . import serializers
 
 # class-based views:
 
-class StudentList(generics.GenericAPIView,
-                  mixins.ListModelMixin,
-                  mixins.CreateModelMixin,):
+class StudentList(generics.ListCreateAPIView):
     """
     List all students, or create a new student.
     """
     serializer_class = serializers.StudentSerializer
     queryset = models.Student.objects.all()
 
-    def get(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
 
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
-
-
-class StudentDetail(generics.GenericAPIView,
-                    mixins.RetrieveModelMixin,
-                    mixins.UpdateModelMixin,
-                    mixins.DestroyModelMixin,):
+class StudentDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, update or delete a student.
+    """
     serializer_class = serializers.StudentSerializer
     queryset = models.Student.objects.all()
-
-    def get(self, request, *args, **kwargs):
-        return self.retrieve(request, *args, **kwargs)
-
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
-
-    def delete(self, request, *args, **kwargs):
-        return self.destroy(request, *args, **kwargs)
 
 
 # class GroupList(APIView):
