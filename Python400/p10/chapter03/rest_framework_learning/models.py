@@ -9,6 +9,7 @@ class Student(models.Model):
     name = models.CharField(max_length=20, verbose_name='Name')
     age = models.IntegerField(null=True, blank=True, verbose_name='Age')
     sex = models.IntegerField(choices=SEX_CHOICES, default=0, verbose_name='Sex')
+    owner = models.ForeignKey('auth.User', related_name='students', on_delete=models.CASCADE, default=1)
 #     group = models.ForeignKey('Group', on_delete=models.SET_NULL, null=True, related_name='students',
 #                               verbose_name='Group')
 #

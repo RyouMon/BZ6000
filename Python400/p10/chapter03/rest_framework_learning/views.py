@@ -5,6 +5,9 @@
 # from rest_framework import status
 # from rest_framework import mixins
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from .permissions import IsOwnerOrReadOnly
+from django.contrib.auth.models import User
 from . import models
 from . import serializers
 
@@ -107,6 +110,10 @@ class StudentList(generics.ListCreateAPIView):
     """
     serializer_class = serializers.StudentSerializer
     queryset = models.Student.objects.all()
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
 class StudentDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -115,6 +122,23 @@ class StudentDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     serializer_class = serializers.StudentSerializer
     queryset = models.Student.objects.all()
+    permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+
+
+class UserList(generics.ListCreateAPIView):
+    """
+    List all user, or create a new user.
+    """
+    serializer_class = serializers.UserSerializer
+    queryset = User.objects.all()
+
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, update or delete a user.
+    """
+    serializer_class = serializers.UserSerializer
+    queryset = User.objects.all()
 
 
 # class GroupList(APIView):
