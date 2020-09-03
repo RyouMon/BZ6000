@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo</title>
+    <style>
+        img {
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Name: {{ photo.img.name }}</li>
+        <li>Describe：{{ photo.desc }}</li>
+        <li>
+            <img src={{ photo.img.url }}>
+        </li>
+    </ul>
+</body>
+</html>
