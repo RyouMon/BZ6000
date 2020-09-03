@@ -112,6 +112,11 @@ class StudentList(generics.ListCreateAPIView):
     queryset = models.Student.objects.all()
     permission_classes = [IsAuthenticatedOrReadOnly]
 
+    def get_serializer_class(self):
+        if self.request.version == 'v2':
+            return serializers.StudentV2Serializer
+        return self.serializer_class
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
@@ -123,6 +128,11 @@ class StudentDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = serializers.StudentSerializer
     queryset = models.Student.objects.all()
     permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+
+    def get_serializer_class(self):
+        if self.request.version == 'v2':
+            return serializers.StudentV2Serializer
+        return self.serializer_class
 
 
 class UserList(generics.ListCreateAPIView):

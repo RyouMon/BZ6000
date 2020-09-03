@@ -34,6 +34,13 @@ class StudentSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'age', 'sex', 'owner']
 
 
+class StudentV2Serializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Student
+        fields = ['id', 'name', 'sex']
+
+
 # class GroupSerializer(serializers.ModelSerializer):
 #
 #     students = StudentSerializer(many=True, read_only=True)
