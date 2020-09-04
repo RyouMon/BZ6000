@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework_learning.apps.RestFrameworkLearningConfig',
     'rest_framework',
     'file_management_learning.apps.FileManagementLearningConfig',
+    'rich_text_editor_learning.apps.RichTextEditorLearningConfig',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
