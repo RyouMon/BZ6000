@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expression And Statement</title>
+</head>
+<body>
+    <h1>Access Object</h1>
+    <p>Student Name: {{ student.name }}</p>
+    <p>Student Age: {{ student.age }}</p>
+    <h1>Access List</h1>
+    <p>First item in list: {{ list[0] }}</p>
+    <h1>Access Dict</h1>
+    <p>Key s1, value: {{ dict['s1'] }}</p>
+    <h1>For Statement</h1>
+    <h2>Standard</h2>
+    <ul>
+        {% for i in list %}
+            <li>{{ i }}</li>
+        {% end %}
+    </ul>
+    <h2>Reversed</h2>
+    <ul>
+        {% for i in reverse(list) %}
+            <li>{{ i }}</li>
+        {% end %}
+    </ul>
+</body>
+</html>
