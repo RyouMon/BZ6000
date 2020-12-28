@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post List</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{% url 'rich_text_editor_learning:add_post' %}">Create</a></li>
+        {% for post in posts %}
+            <li>Title: {{ post.title }}, <a href="{% url 'rich_text_editor_learning:update_post' %}?id={{ post.id }}">Modify</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

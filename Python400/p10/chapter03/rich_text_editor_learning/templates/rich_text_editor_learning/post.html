@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Detail</title>
+    {{ form.media }}
+</head>
+<body>
+    <form action="{% url 'rich_text_editor_learning:update_post' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{ form.instance.id }}">
+        <table>
+            {{ form }}
+            <tr>
+                <td colspan="2"><input type="submit" value="update"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
